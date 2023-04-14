@@ -8,15 +8,16 @@ public class EmployeeWage {
     public static final int EMP_WORKING_DAY = 20;
     public static final int EMP_WORKING_HRS= 100;
 
-    public static void main(String[] args) {
+
+    public void empWageMethod(){
 
         int empHrs = 0;
         int totalEmpHrs = 0;
         int totalEmpDays = 0;
 
-     while (totalEmpHrs <= EMP_WORKING_HRS && totalEmpDays < EMP_WORKING_DAY){
+        while (totalEmpHrs <= EMP_WORKING_HRS && totalEmpDays < EMP_WORKING_DAY){
 
-         totalEmpDays++;
+            totalEmpDays++;
 
             int empCheck = (int) (Math.floor(Math.random() * 10) % 3);
 
@@ -38,12 +39,21 @@ public class EmployeeWage {
 
             }
             totalEmpHrs = empHrs + totalEmpHrs;
-         System.out.println("day "+totalEmpDays+ ": " +totalEmpHrs + " Hours");
+            System.out.println("day "+totalEmpDays+ ": " +totalEmpHrs + " Hours");
 
         }
 
-       int empwage = totalEmpHrs * EMP_RATE_PER_HOUR;
+        int empwage = totalEmpHrs * EMP_RATE_PER_HOUR;
         System.out.println(empwage);
+
+    }
+
+    public static void main(String[] args) {
+
+        EmployeeWage obj = new EmployeeWage();
+        obj.empWageMethod();
+
+
 
     }
 
